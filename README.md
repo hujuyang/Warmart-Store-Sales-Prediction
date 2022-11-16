@@ -29,7 +29,7 @@ we used to analyze factors related to store sales:
 
 <img src="https://user-images.githubusercontent.com/104108189/202260655-f28e87a6-e7ab-498f-af77-91b5fcce54e7.png" width=17% height=17%> <img src="https://user-images.githubusercontent.com/104108189/202260873-6dd98874-89fa-4277-bcfc-dc8c862528a8.png" width=15% height=15%>
 
-   Visualized analysis results and plotted findings using line chart, bar plot, scattered plot and Google Heatmap
+   Visualized analysis results and plotted findings using line chart, bar plot, scattered plot and heatmap
 
 * **Data Modelling:**
 Linear Regression and Random Forest Classification
