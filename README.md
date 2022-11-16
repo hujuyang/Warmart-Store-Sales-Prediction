@@ -2,7 +2,7 @@
 
 ## Overview
 This purpose of the project is to build a machine learing model based on the weekly sales data from 45 Walmart stores in Texas, Wisconsin and California from 2010 to
-2012. The performance of the model is compared to a linear regression model.
+2012. The performance of the model is compared to a linear regression model. We found that rhe Random Forest Model reduced forecasting error by 86%. 
 
 ## Data Description
 This compiled dataset was pulled from three otherdatasets linked by Date and Store ID, and was builtto explore what other factors, other than the seasonal variations, contribute to store sales.
