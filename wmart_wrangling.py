@@ -18,33 +18,26 @@ from sklearn import preprocessing
 from matplotlib import pyplot as plt
 import seaborn as sns
 import datetime as dt
-sns.set(rc={"figure.dpi":600, 'savefig.dpi':600})
+
 
 df = pd.read_csv('Walmart/wmart_data_compiled.csv')
 
-
-
 df['IsHoliday'] = df['IsHoliday'].apply(lambda x: 1 if x==True else 0)
-
-
 le = preprocessing.LabelEncoder()
 le.fit(df['Type'].unique())
 
 
         
-
-
 df['Date'] = pd.to_datetime(df['Date'])
 df['Year'] = df['Date'].dt.year
 df['Week'] = df['Date'].dt.week
 df['Month'] = df['Date'].dt.month
 df['Day'] = df['Date'].dt.day
 
-print(df[['Date','Year', 'Month', 'Day']])
+
 
 df['Holiday_Type'] = df['Week'].apply(lambda x: 0 if x not in [6,36,47,52] else x)
 le = preprocessing.LabelEncoder()
-
 
 x = df[df['IsHoliday']==1]['Week'].unique()
 x = x.tolist()
@@ -104,22 +97,7 @@ def weeks_pre_holiday(x):
                 diff_list.append(0)
             else:
                 diff_list.append(d_diff.days / 7)
-            return int(min(diff_list))
-
-    if x['Year'] == 2013:
-        
-        for d in [dt.datetime(2013, 12, 27),
-                  dt.datetime(2013, 11, 29),
-                  dt.datetime(2013, 9, 6),
-                  dt.datetime(2013, 2, 8)]:
-            
-            d_diff = d - x['Date']
-            if d_diff.days < 0:
-                diff_list.append(0)
-            else:
-                diff_list.append(d_diff.days / 7)
-            return int(min(diff_list))
-            
+            return int(min(diff_list))           
 
 df['weeks_pre_holiday'] = df.apply(weeks_pre_holiday, axis=1)
 
