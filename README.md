@@ -4,6 +4,21 @@
 This purpose of the project is to build a machine learing model based on the weekly sales data from 45 Walmart stores in Texas, Wisconsin and California from 2010 to
 2012. The performance of the model is compared to a linear regression model.
 
+## Data Description
+This compiled dataset was pulled from three otherdatasets linked by Date and Store ID, and was builtto explore what other factors, other than the seasonal variations, contribute to store sales.
+
+https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting/data
+
+The datasets include the following information that
+we used to analyze factors related to store sales:
+* Date 
+* Store Type & Size
+* Promotion Type
+* Temperature
+* Economic Data
+
+
+
 ## Methods Used
 * **Pandas, Numpy:**
 
