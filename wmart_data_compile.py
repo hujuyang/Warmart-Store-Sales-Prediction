@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-path = r"C:\DQ\SALES FORECAST COOP\Walmart"
+path = "" #path of the original threee Walmart Data files
 
 df_t = pd.read_csv(path+r"\train.csv", parse_dates=['Date'])
 df_f = pd.read_csv(path+r"\features.csv", parse_dates=['Date'])
@@ -38,22 +38,20 @@ s.set(title='Weekly Store Sales Distribution')
 
 
 
-# sns.distplot(df_tfs.groupby('Date')['MarkDown1'].sum())
-# sns.distplot(df_tfs.groupby('Date')['MarkDown2'].sum())
-# sns.distplot(df_tfs.groupby('Date')['MarkDown3'].sum())
-# sns.distplot(df_tfs.groupby('Date')['MarkDown4'].sum())
-# sns.distplot(df_tfs.groupby('Date')['MarkDown5'].sum())
+sns.distplot(df_tfs.groupby('Date')['MarkDown1'].sum())
+sns.distplot(df_tfs.groupby('Date')['MarkDown2'].sum())
+sns.distplot(df_tfs.groupby('Date')['MarkDown3'].sum())
+sns.distplot(df_tfs.groupby('Date')['MarkDown4'].sum())
+sns.distplot(df_tfs.groupby('Date')['MarkDown5'].sum())
+
+sns.countplot(df_tfs.Type)
+
+sns.distplot(df_tfs[df_tfs.Type=='A'].groupby('Date')['Weekly_Sales'].sum())
+sns.distplot(df_tfs[df_tfs.Type=='B'].groupby('Date')['Weekly_Sales'].sum())
+sns.distplot(df_tfs[df_tfs.Type=='C'].groupby('Date')['Weekly_Sales'].sum())
 
 
-#sns.countplot(df_tfs.Type)
-
-# =============================================================================
-# sns.distplot(df_tfs[df_tfs.Type=='A'].groupby('Date')['Weekly_Sales'].sum())
-# sns.distplot(df_tfs[df_tfs.Type=='B'].groupby('Date')['Weekly_Sales'].sum())
-# sns.distplot(df_tfs[df_tfs.Type=='C'].groupby('Date')['Weekly_Sales'].sum())
-# =============================================================================
-
-# df_tfs[df_tfs.Type=='A'].groupby('Date')['Weekly_Sales'].sum().plot()
-# df_tfs[df_tfs.Type=='B'].groupby('Date')['Weekly_Sales'].sum().plot()
-# df_tfs[df_tfs.Type=='C'].groupby('Date')['Weekly_Sales'].sum().plot()
+df_tfs[df_tfs.Type=='A'].groupby('Date')['Weekly_Sales'].sum().plot()
+df_tfs[df_tfs.Type=='B'].groupby('Date')['Weekly_Sales'].sum().plot()
+df_tfs[df_tfs.Type=='C'].groupby('Date')['Weekly_Sales'].sum().plot()
 # holiday has no effect on C type store
