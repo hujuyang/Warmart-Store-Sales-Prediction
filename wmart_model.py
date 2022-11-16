@@ -63,8 +63,3 @@ columns_top_10 = [X_train.columns[i] for i in index_top_10]
       
 plt.bar(range(10), importance[index_top_10])
 plt.xticks(range(10), columns_top_10)      
-#Returns the indices that would sort an array.   
-
-#n_jobs might improve run time   
-# isd timeit.default_timer()
-# kfold grid search
